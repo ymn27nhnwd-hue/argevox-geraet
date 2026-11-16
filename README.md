@@ -1,6 +1,6 @@
 # Argevox Gerät
 
-Vocoder de 20 bandas para MPC standalone, desarrollado por **Argerax**. Usá el micrófono en vivo como modulador y un oscilador nativo de la MPC como portadora. **Mini D** también se probó como portadora en la MPC One+. Inspirado en el vocoder del estudio Siemens de música electrónica.
+Vocoder de 20 bandas para MPC standalone, desarrollado por **Argerax**. Usá el micrófono en vivo como modulador y un oscilador nativo de la MPC como portadora. **Mini D** también se probó como portadora en la MPC One+. Inspirado en el **Sennheiser VSM-201**, el modelo que Kraftwerk usó en *The Man-Machine* (1978) y *Computer World* (1981). [Referencia histórica y fotos](https://www.juliensauctions.com/en/items/2088294/florian-schneider-a-kling-klang-sennheiser-vsm-201-vocoder-in-original-case).
 
 ![Pantalla principal de Argevox Gerät](docs/interfaz.png)
 
@@ -26,6 +26,3 @@ El SDK adjunta la interfaz desde `skins/`. La compilación ARM 32/64 de esta ver
 ## Licencia
 
 MIT. El código usa el framework, los filtros y el suavizado del SDK de inMusic. Consultá [LICENSE](LICENSE).
-
-Referencia histórica. [Stefan Schenk, *Das Siemens-Studio für elektronische Musik*, pp. 105–108](https://epub.ub.uni-muenchen.de/28394/1/Stefan_Schenk_Das_Siemens-Studio_f%C3%BCr_elektronische_Musik.pdf).
-
