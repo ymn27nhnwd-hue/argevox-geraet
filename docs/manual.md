@@ -3,6 +3,8 @@
 
 Argevox Gerät es un vocoder de 20 bandas para MPC standalone. El sinte aporta la nota o el acorde y el micrófono aporta la articulación. El efecto recibe ambos por un submix estéreo y devuelve la señal procesada al centro.
 
+Inspirado en el **Sennheiser VSM-201**, el modelo que Kraftwerk usó en *The Man-Machine* (1978) y *Computer World* (1981). [Referencia histórica y fotos](https://www.juliensauctions.com/en/items/2088294/florian-schneider-a-kling-klang-sennheiser-vsm-201-vocoder-in-original-case).
+
 ## 1. Instalar o actualizar
 
 Necesitás una MPC con **MPC OS 3.10.1 o posterior**. La **One+** se probó en hardware con versiones anteriores del plugin. La versión 0.2.1 pasó las pruebas del simulador y la validación del SDK.
