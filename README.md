@@ -4,6 +4,12 @@ Vocoder de 20 bandas para MPC standalone, desarrollado por **Argerax**. Usá el 
 
 ![Pantalla principal de Argevox Gerät](docs/interfaz.png)
 
+## Estado de las pruebas
+
+El autor confirmó la instalación de la versión 0.2.1 desde el repositorio de OpenMPC mediante el Plugin Manager en su MPC One+, con MPC OS 3.10.1. El plugin carga y produce audio usando Mini D como portadora y micrófono como modulador. La prueba se registró el 23 de noviembre de 2026.
+
+Las pruebas musicales detectaron dificultades para ajustar los niveles y una inteligibilidad de voz insuficiente. Con Konsonanten y las ganancias de las bandas en 0 la señal resultó más equilibrada, aunque la articulación necesita mejoras.
+
 ## Instalación rápida
 
 1. Descomprimí el ZIP instalable de la versión 0.2.1. Copiá **Argerax - VST - Argevox Gerät** a **VST2 Plugins** en la raíz de una SD o pendrive.
