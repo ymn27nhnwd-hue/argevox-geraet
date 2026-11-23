@@ -18,6 +18,12 @@ Las pruebas musicales detectaron dificultades para ajustar los niveles y una int
 
 El [manual en español](docs/manual.md) explica el ruteo, los controles en alemán, cómo ajustar el umbral y cómo diagnosticar una fuga de la portadora.
 
+
+## Próximas versiones
+
+- **0.2.2** — actualización del empaquetado con las herramientas actuales de OpenMPC, créditos de Argerax y registro de la instalación verificada desde el Plugin Manager. Pendiente de publicación.
+- **1.0.0-beta.1** — desarrollo del nuevo motor, guiado por el manual y los esquemas del Sennheiser VSM-201, para mejorar la articulación, la inteligibilidad y el ajuste de niveles. Pendiente de implementación y pruebas en MPC.
+
 ## Código y compilación
 
 Usá el [MPC Plugin Builder SDK de inMusic](https://github.com/inmusic-software/mpc-plugin-builder-sdk/tree/febd2ca5bd9eb16c4a412837196e145566bc981b). Clonalo y ubicá los archivos de este repositorio directamente en `plugins/Argevox Gerät/`. Desde la raíz del SDK:
@@ -31,4 +37,4 @@ El SDK adjunta la interfaz desde `skins/`. La compilación ARM 32/64 de esta ver
 
 ## Licencia
 
-MIT. El código usa el framework, los filtros y el suavizado del SDK de inMusic. Consultá [LICENSE](LICENSE).
+MIT. Argerax es el fabricante y autor del código y los recursos originales de Argevox Gerät. Los componentes reutilizados del SDK conservan los avisos de inMusic. El código usa el framework, los filtros y el suavizado del SDK de inMusic. Consultá [LICENSE](LICENSE).
