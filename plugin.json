@@ -1,7 +1,7 @@
 {
   "name": "Argevox Gerät",
   "manufacturer": "Argerax",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "format": "vst2",
   "kind": "effect",
   "uid": "Awpt",
@@ -10,9 +10,8 @@
   "category": "Effect",
   "file32": "VST/argevox-ger-te-arm32.so",
   "file64": "VST/argevox-ger-te-arm64.so",
-  "description": "20-Band-Vocoder mit Rauschschwelle und dynamischer Entzischung.",
+  "description": "20-Band-Vocoder: automatische Stimmart, Formanten, dunkle Stimmen und Multifilter. Motor 1.0 Beta 2.",
   "author": "Argerax",
-  "url": "",
+  "url": "https://github.com/ymn27nhnwd-hue/argevox-geraet",
   "license": "MIT"
 }
-
