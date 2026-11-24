@@ -1,58 +1,99 @@
-# Argevox Gerät
-## Manual de usuario · Versión 0.2.1
+# Argevox Gerät — 1.0.0 beta 2
 
-Argevox Gerät es un vocoder de 20 bandas para MPC standalone. El sinte aporta la nota o el acorde y el micrófono aporta la articulación. El efecto recibe ambos por un submix estéreo y devuelve la señal procesada al centro.
+[English](manual-en.md) · [Deutsch](manual-de.md)
 
-Inspirado en el **Sennheiser VSM-201**, el modelo que Kraftwerk usó en *The Man-Machine* (1978) y *Computer World* (1981). [Referencia histórica y fotos](https://www.juliensauctions.com/en/items/2088294/florian-schneider-a-kling-klang-sennheiser-vsm-201-vocoder-in-original-case).
+Fabricante y desarrollo Argerax. Compilación interna 1.0.0, distribución de prueba beta 2.
 
-## 1. Instalar o actualizar
+## Instalación y primer arranque
 
-Necesitás una MPC con **MPC OS 3.10.1 o posterior**. La **One+** se probó en hardware con versiones anteriores del plugin. La versión 0.2.1 pasó las pruebas del simulador y la validación del SDK.
+Requiere MPC OS 3.10.1 o posterior y Preferences → Enhancements (Beta) → Enable Enhancements y External Plugin Support activados. Copiá la carpeta `Argerax - VST - Argevox Gerät` del ZIP manual a `VST2 Plugins` en la raíz de tu unidad. Reiniciá la MPC o volvé a explorar los plugins según el flujo del dispositivo.
 
-1. Descomprimí el ZIP instalable. Copiá la carpeta **Argerax - VST - Argevox Gerät** a **VST2 Plugins**, en la raíz de una SD o pendrive. Adentro de la carpeta del plugin deberían verse `plugin.json`, `version.xml`, `VST` y `Plugin Skins`.
-2. Si actualizás, guardá la versión anterior fuera de **VST2 Plugins**. Las versiones **Argevox Geräte** y **Argevox Gerät** usan el mismo identificador.
-3. En **Preferences → Enhancements (Beta)** activá **Enable Enhancements** y **External Plugin Support**. Al actualizar, reiniciá la MPC con la unidad conectada.
-4. Abrí un slot de insert en el submix y buscá **External VST Plugins → Argerax → Argevox Gerät**.
+Esta beta usa la misma identidad de plugin que 0.2.1 y ocupa su lugar. Guardá una copia del instalador 0.2.1 y de los proyectos antes de probarla. Conserva los identificadores y el orden de los primeros 49 parámetros, aunque el motor cambia el sonido. Los parámetros nuevos aparecen al final. Los proyectos antiguos conservan sus ganancias y umbral, que pueden necesitar reajuste para este motor.
 
-## 2. Preparar el proyecto
+## Ruteo
 
-| Señal | Pista en la MPC | Panorama | Salida |
-|---|---|---|---|
-| Portadora | Keygroup con **Digital Saw** o pista de **Mini D** | Todo a la izquierda | Sub 1 |
-| Voz en vivo | Audio, **Input 1**, **Monitor → In** | Todo a la derecha | Sub 1 |
-| Efecto | **Argevox Gerät** en un slot de insert | Sub 1 centrado | Salida principal |
+Sinte u oscilador de la MPC completamente a L, micrófono completamente a R, ambos al mismo submix estéreo. Argevox como insert del submix. Monitor del micrófono en In. La salida procesada es mono centrada y se escribe en ambos canales. La entrada L es la portadora y R es el modulador.
 
-- Conectá la **salida de línea** del preamp de micrófono al **Audio In 1**. Ajustá su ganancia para que tu voz habitual llegue con margen antes de recortar.
-- Para la portadora nativa, abrí **Track Edit → Samples/Oscs** en el Keygroup. En la primera capa elegí **OSC → Digital Saw**. Un filtro abierto y una nota sostenida facilitan la primera prueba.
-- Si usás un teclado dedicado, elegí su puerto y canal MIDI en la pista del sinte. Usá **Monitor → In** en esa pista si querés seguir tocándola al seleccionar otra.
-- Cerrá los envíos de las dos pistas al probar. Si querés reverb y delay en el resultado, usá **Send 1** y **Send 2** desde **Sub 1**.
+Primera comparación recomendada
 
-**Primera prueba.** Sostené una nota y hablá. **OSZ / L** indica el sinte y **MIK / R** la voz. Repetí con un acorde.
+1. Cargá el preset **Klar 201**. Stimme y Träger en 0 dB, bandas en 0, Entzischung en 0. Mantené una nota de sierra grave en Mini D con el filtro abierto.
+2. Para aislar el umbral, poné **Schwelle en −80 dBFS** durante la prueba. Después subilo hasta silenciar el ruido de fondo sin perder sílabas.
+3. Hablá normalmente. **Stimme AGC** y **Träger AGC** regulan el nivel interno con ganancia acotada. Ausgang ajusta la escucha.
+4. Compará con **Dunkle Stimme**. **Formanten** desplaza la envolvente espectral sin cambiar las notas del sintetizador. Los valores negativos dan resonancias más graves. **Dunkelheit** atenúa progresivamente las bandas superiores.
+5. Si faltan consonantes, aumentá Konsonanten gradualmente. **Klarheit** agrega una fracción de la voz real filtrada en agudos durante sonidos sordos. Su valor inicial es 0 para evaluar primero la síntesis.
 
-## 3. Controles en pantalla
+## Controles
 
-| Pestaña | Control | Función |
-|---|---|---|
-| VOCODER | **Stimme** | Ganancia de la voz antes del análisis de bandas. |
-| VOCODER | **Träger** | Ganancia de la portadora. |
-| VOCODER | **Konsonanten** | Cantidad de ruido filtrado que ayuda a reproducir consonantes. |
-| VOCODER | **Reaktion** | Respuesta de las bandas. Valores bajos siguen la articulación más rápido. Valores altos suavizan las transiciones. |
-| STIMME | **Schwelle** | Umbral de apertura de −80 a 0 dBFS. Mide la entrada digital MIK / R antes de Stimme. En −80 dBFS se desactiva el umbral. |
-| STIMME | **Entzischung** | Reducción dinámica de sibilantes hasta 6 dB. En 0 dB se desactiva. El ajuste inicial es 3 dB. |
-| BAND 01 / BAND 11 | **Band 1–20** | Faders táctiles con ±18 dB de ajuste por banda de síntesis. El valor en Hz o kHz indica su frecuencia central. |
+| Página | Controles y función |
+| --- | --- |
+| STIMME | Stimme, Träger, Konsonanten, Reaktion; Schwelle, Entzischung, ambos AGC; Betriebsart, Stimmart, Tonquelle y Tonhöhe. Tres filas de cuatro controles. |
+| KLANG | Ausgang, Formanten, Dunkelheit y Klarheit; Kontur, Rosa Rauschen, Sprachanteil y Pausenpegel. |
+| BÄNDER | Las 20 ganancias táctiles de síntesis en dos filas de diez, con frecuencia central y medidor de actividad por banda. |
+| SPRACHE | Las 20 mezclas táctiles de voz filtrada en dos filas de diez. |
+| PAUSEN | Pausenmodus, Pausenpegel, Schwelle y Ausgang; los diez controles Pausenpaar debajo. |
 
-Los indicadores de **Sprachanalyse** muestran la actividad de voz de graves a agudos. Los presets son **Klassisch**, **Roboter** y **Weich**.
+Cada página tiene al menos cuatro Q-Link asignados. Los grupos se ordenan por filas. En BÄNDER y SPRACHE hay cuatro bancos de cuatro asignaciones para las bandas 1–8 y 11–18. Las bandas 9, 10, 19 y 20 se ajustan por pantalla táctil. Los 20 controles permanecen visibles a la vez. Los nombres de parámetros y los valores guardados son los de beta 1.
 
-### Ajustar Schwelle
+### Betriebsart
 
-Dejá el micrófono en **Monitor In**, sostené un acorde y hacé silencio. Partí de **−48 dBFS**. Si el ruido de fondo abre el efecto, subí Schwelle hasta que se calle. Hablá a tu volumen habitual y bajá el umbral si se pierden comienzos de palabras. **dBFS** mide la señal digital en el submix. La ganancia analógica del preamp se ajusta por separado.
+- **Vocoder** aplica las envolventes al sonido de excitación y suma las adiciones seleccionadas.
+- **Multifilter** procesa la voz mediante los filtros y los 20 controles Sprache. No requiere portadora.
+- **Stimme** permite escuchar el micrófono acondicionado y comprobar sus niveles.
+- **Träger** permite escuchar la portadora acondicionada.
 
-## 4. Si algo falla
+Los modos de escucha Stimme y Träger pasan a salida la entrada seleccionada. La protección de picos y Ausgang siguen activos.
 
-- **El insert no aparece.** Confirmá la versión de MPC OS, las dos opciones de Enhancements y que la carpeta del plugin esté directamente dentro de **VST2 Plugins**. Buscalo en el selector de inserts de la MPC.
-- **Hay señal en un solo indicador.** Revisá las salidas de ambas pistas, su panorama y **Monitor In** en la pista de audio.
-- **El sinte se oye sin hablar.** Con auriculares y parlantes apagados, desactivá el insert momentáneamente. Con el monitoreo del micrófono apagado, el acorde debería oírse solo por L. Después soltá el acorde, volvé a **Monitor In** y confirmá que la voz se oiga solo por R. Reactivá el insert y ajustá Schwelle. Si mutear Sub 1 deja el sinte sonando, revisá los envíos y las rutas directas.
-- **La voz quedó opaca.** Bajá un poco **Entzischung**, probá **Reaktion** más rápida o recuperá una banda alta de a una. Compará con los faders centrados en 0 dB.
+### Stimmart y fuentes
 
-[Guía de instalación del SDK oficial](https://github.com/inmusic-software/mpc-plugin-builder-sdk/blob/main/docs/install-and-test.md)
+- **Automatik** mezcla excitación tonal y ruido en función del balance espectral de la voz. Konsonanten controla el aporte automático de ruido.
+- **Tonhaft** conserva la excitación tonal.
+- **Rauschen** emplea ruido para todas las bandas y permite susurros articulados.
+- **Tonquelle** selecciona Extern L, Säge intern o Puls intern. El oscilador interno es de prueba, con frecuencia fija regulada por Tonhöhe. Este insert no recibe notas MIDI.
+- **Rosa Rauschen** cambia el ruido blanco por una aproximación digital de ruido rosa.
 
+### Formantes, oscuridad y articulación
+
+Formanten desplaza la envolvente entre bandas de −12 a +12 semitonos. Dunkelheit atenúa progresivamente las bandas superiores. Kontur reduce las bandas de análisis débiles respecto a las dominantes. Reaktion controla los tiempos de ataque y liberación; sus valores bajos siguen cambios más rápidos. Entzischung reduce el exceso de energía aguda en sonidos sordos. Klarheit añade voz real filtrada y puede dejarse en 0 para evaluar la voz totalmente sintetizada.
+
+### Pausas
+
+**Pausenmodus** ofrece Aus, Global y Paarweise. Global aplica Pausenpegel a todo el banco. Paarweise también usa los diez controles Pausenpaar. El relleno es intencionalmente audible cuando el detector cierra por ausencia de voz. Requiere una portadora activa. Con Schwelle en −80 el detector permanece abierto y el relleno no entra. Es una función creativa que debe estar en Aus para la prueba de silencio normal.
+
+### Presets
+
+- **Klar 201** — articulación de referencia con excitación externa y oscuridad 0.
+- **Dunkle Stimme** — formantes −4 semitonos y oscuridad 45%, excitación externa.
+- **Tiefe Maschine** — pulso interno a 85 Hz, formantes −7 y oscuridad 65%.
+- **Flüstern** — ruido rosa articulado, inicialmente con fuente externa. Seleccioná una fuente interna si querés probarlo sin sinte.
+- **Multifilter** — voz filtrada con ajustes táctiles por banda.
+- **Pausenbrücke** — demostración de relleno global con portadora externa sostenida.
+
+## Solución de problemas
+
+Si Vocoder queda en silencio, comprobá ambos medidores de entrada y el ruteo L/R. Poné Schwelle temporalmente en −80 y seleccioná Extern L para usar Mini D. Si solo escuchás una nota sostenida, confirmá que el micrófono vaya a R y que Pausenmodus esté en Aus. Si la voz suena opaca, empezá con Klar 201, Entzischung 0, Dunkelheit 0 y las bandas en 0 dB. Guardá la configuración que funciona como preset o proyecto de MPC.
+
+## Referencia VSM-201 y alcance de esta beta
+
+Se implementó una interpretación funcional digital de los bloques del manual, con banco de 20 bandas, envolventes, AGC, excitación tonal/ruido, selección automática, mezcla de voz filtrada, multifiltro, monitores de entrada y relleno global o por pares.
+
+Las frecuencias centrales son lecturas aproximadas de la Ilustración 8 del fabricante, redondeadas en Hz
+
+140, 230, 330, 450, 580, 700, 850, 1000, 1170, 1360, 1570, 1830, 2140, 2500, 2900, 3400, 4000, 4800, 5800, 7500.
+
+Cada canal de análisis y síntesis usa tres resonadores digitales en cascada. Las envolventes emplean rectificación y dos etapas de suavizado con tiempos dependientes de la banda. La modulación precede a los filtros de síntesis. La detección sonoro/sordo, el AGC, las constantes de tiempo, el ruido rosa y los valores Q son diseños digitales propios aproximados. Requieren comparación auditiva y mediciones adicionales para acercarse al equipo original. No se ha realizado una emulación por componentes ni una comparación calibrada con un VSM-201 físico.
+
+La adaptación estéreo tiene dos entradas y dos salidas. Los conectores CV, las 20 salidas físicas de envolvente, las entradas independientes de excitación sorda y las conexiones del VSM-201 a equipos externos quedan fuera de esta interfaz. Las envolventes tienen medidores en pantalla. Para el desplazamiento de formantes se remapea la envolvente entre bandas. La oscuridad y Klarheit son extensiones de Argerax.
+
+## Validación y prueba en hardware
+
+Los ensayos automáticos verifican carga, estado de 93 parámetros, seis presets, bloques de 32 a 512 muestras, señal finita, procesamiento in-place, silencio, migración de los 49 parámetros publicados, funciones de escucha y multifiltro, ruido articulado, relleno de pausas y movimiento del espectro al desplazar formantes.
+
+El autor confirmó el funcionamiento de beta 1 en MPC One+ con MPC OS 3.10.1, con acordes y voces oscuras, y destacó el preset Klar 201. Beta 2 utiliza los mismos binarios DSP y reorganiza la interfaz. El consumo de CPU y la instalación de esta nueva beta mediante OpenMPC siguen pendientes de medición o confirmación. La prueba del autor no constituye una comparación calibrada con un VSM-201 físico.
+
+## Fuentes
+
+- Manual original de Sennheiser, especialmente apartados 2.4–2.11, 3.5–3.7 y datos técnicos. https://rubidium.se/~magnus/synths/companies/sennheiser/
+- Curva original de filtros, Ilustración 8. https://rubidium.se/~magnus/synths/companies/sennheiser/Sennheiser_VSM201_manual_il8_200.jpg
+- Esquema original B101–B110 de los canales espectrales. https://rubidium.se/~magnus/synths/companies/sennheiser/Sennheiser_VSM201_schematic_b101_b110_200.jpg
+
+Copyright © 2026 Argerax por los aportes originales. MIT. Los componentes del MPC Plugin Builder SDK reutilizados conservan los avisos de inMusic. Consultá LICENSE.
