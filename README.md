@@ -1,4 +1,4 @@
-# Argevox Gerät · 1.0.1 beta 1
+# Argevox Gerät · 1.0.1
 
 20-band live vocoder for Akai MPC standalone, developed by **Argerax**, inspired by the functional architecture of the **Sennheiser VSM-201**. Use a microphone as modulator and Mini D or a native MPC oscillator as carrier.
 
@@ -12,17 +12,17 @@
 
 ## Install
 
-Download the manual ZIP from the [beta release](https://github.com/ymn27nhnwd-hue/argevox-geraet/releases/tag/v1.0.1-beta.1), extract it, and copy **Argerax - VST - Argevox Gerät** into **VST2 Plugins** at the root of your drive. Requires **MPC OS 3.10.1 or later**, with **Enable Enhancements** and **External Plugin Support** enabled. The ARMv7 and AArch64 packages are for OpenMPC Plugin Manager.
+Download the manual ZIP from the [stable release](https://github.com/ymn27nhnwd-hue/argevox-geraet/releases/tag/v1.0.1), extract it, and copy **Argerax - VST - Argevox Gerät** into **VST2 Plugins** at the root of your drive. Requires **MPC OS 3.10.1 or later**, with **Enable Enhancements** and **External Plugin Support** enabled. The ARMv7 and AArch64 packages are for OpenMPC Plugin Manager.
 
 Route the carrier fully left and the microphone fully right to the same stereo submix, then insert Argevox on that submix. Set microphone monitoring to In. Start with **Klar 201**, then try **Dunkle Stimme** and **Tiefe Maschine**.
 
-This beta replaces the existing Argevox installation. Keep the previous installer and a copy of projects for comparison. The published UID and first 49 parameter identifiers are preserved. Older projects may need new level settings because of the redesigned engine.
+This release replaces the existing Argevox installation. Keep the previous installer and a copy of projects for comparison. The published UID and first 49 parameter identifiers are preserved. Older projects may need new level settings because of the redesigned engine.
 
 ## New engine and interface
 
 Twenty synthesis-band gains, twenty filtered-speech amounts and ten paired pause-fill controls. Independent bounded AGCs, automatic tonal/noise excitation, pink noise, multifilter, input monitors, a fixed-frequency internal oscillator, formant shift, darkness, clarity and six presets. The insert uses external audio for a MIDI-played carrier.
 
-Beta 2 groups all controls into **five pages**: STIMME, KLANG, BÄNDER, SPRACHE and PAUSEN. Each page has at least four Q-Link assignments. All twenty synthesis bands fit on one page. All twenty filtered-speech controls also fit on one page. The interface retains German parameter names in every manual edition.
+The interface groups all controls into **five pages**: STIMME, KLANG, BÄNDER, SPRACHE and PAUSEN. Each page has at least four Q-Link assignments. All twenty synthesis bands fit on one page. All twenty filtered-speech controls also fit on one page. The interface retains German parameter names in every manual edition.
 
 The approximate center frequencies were read from Sennheiser's original Illustration 8. This is a functional digital interpretation; its filters, timing and voicing detector have not been calibrated against a physical VSM-201. The manuals describe the supported functions and the original hardware connections that cannot be exposed through this stereo insert.
 
@@ -32,7 +32,7 @@ The author confirmed beta 1 playback on **MPC One+ with MPC OS 3.10.1**, includi
 
 The SDK host simulator passed 20 checks with zero failures or warnings. Targeted DSP checks cover silence, input monitors, multifilter, noise, pause filling, spectral transfer, formant shift and restoration of the first 49 parameters. Both ARM packages pass the updated OpenMPC catalog validator. See [validation notes](docs/validacion.md).
 
-The plugin binary and package manifests use numeric version **1.0.1**, as required by the packaging tools. GitHub marks this distribution as **v1.0.1-beta.1 prerelease**.
+The plugin binary and package manifests use numeric version **1.0.1**, as required by the packaging tools. GitHub publishes this distribution as the **v1.0.1 stable release**. The author confirmed manual installation and operation on MPC One+ with MPC OS 3.10.1 on 2026-11-25. Stable retains the tested ARM DSP binaries, with documentation and the graphic version heading updated. AArch64 hardware remains unverified.
 
 ## Build
 
@@ -49,3 +49,7 @@ MIT. Copyright © 2026 Argerax for original code and assets. Reused SDK componen
 ## Packaging patch 1.0.1
 
 Rebuilt with the current OpenMPC installation templates. The earlier 1.0.0 hardware test now uses the numeric version expected by the catalog. The five-page interface and audio processing are retained. See the manual for the scope of device verification.
+
+## Manual installation details
+
+Use **Argevox-Geraet-1.0.1-mpc.zip** for direct copying. In the architecture-specific OpenMPC ZIPs, find the plugin folder under **portable**. Copy the whole **Argerax - VST - Argevox Gerät** folder into **VST2 Plugins**, then restart the MPC. Do not execute `.sh` files on your computer. MPC One+ uses the ARMv7 package.
