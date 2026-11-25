@@ -1,4 +1,4 @@
-# Argevox Gerät · 1.0.0 beta 2
+# Argevox Gerät · 1.0.1 beta 1
 
 20-band live vocoder for Akai MPC standalone, developed by **Argerax**, inspired by the functional architecture of the **Sennheiser VSM-201**. Use a microphone as modulator and Mini D or a native MPC oscillator as carrier.
 
@@ -12,7 +12,7 @@
 
 ## Install
 
-Download the manual ZIP from the [beta release](https://github.com/ymn27nhnwd-hue/argevox-geraet/releases/tag/v1.0.0-beta.2), extract it, and copy **Argerax - VST - Argevox Gerät** into **VST2 Plugins** at the root of your drive. Requires **MPC OS 3.10.1 or later**, with **Enable Enhancements** and **External Plugin Support** enabled. The ARMv7 and AArch64 packages are for OpenMPC Plugin Manager.
+Download the manual ZIP from the [beta release](https://github.com/ymn27nhnwd-hue/argevox-geraet/releases/tag/v1.0.1-beta.1), extract it, and copy **Argerax - VST - Argevox Gerät** into **VST2 Plugins** at the root of your drive. Requires **MPC OS 3.10.1 or later**, with **Enable Enhancements** and **External Plugin Support** enabled. The ARMv7 and AArch64 packages are for OpenMPC Plugin Manager.
 
 Route the carrier fully left and the microphone fully right to the same stereo submix, then insert Argevox on that submix. Set microphone monitoring to In. Start with **Klar 201**, then try **Dunkle Stimme** and **Tiefe Maschine**.
 
@@ -28,20 +28,24 @@ The approximate center frequencies were read from Sennheiser's original Illustra
 
 ## Hardware feedback and validation
 
-The author confirmed beta 1 playback on **MPC One+ with MPC OS 3.10.1**, including chords and dark voices, and highlighted **Klar 201**. Beta 2 uses identical DSP binaries with a revised interface. CPU measurements and installation of the new beta through OpenMPC remain pending. See [hardware test notes](docs/hardware-tests.md).
+The author confirmed beta 1 playback on **MPC One+ with MPC OS 3.10.1**, including chords and dark voices, and highlighted **Klar 201**. The audio-processing source matches the hardware-tested engine; 1.0.1 updates the release identifier and packaging. The author measured approximately 34% total project CPU active versus 20% with Argevox bypassed, a difference of 14 percentage points with Mini D in the project. Installation of the new 1.0.1 packaging patch through OpenMPC remains pending. See [hardware test notes](docs/hardware-tests.md).
 
 The SDK host simulator passed 20 checks with zero failures or warnings. Targeted DSP checks cover silence, input monitors, multifilter, noise, pause filling, spectral transfer, formant shift and restoration of the first 49 parameters. Both ARM packages pass the updated OpenMPC catalog validator. See [validation notes](docs/validacion.md).
 
-The plugin binary and package manifests use numeric version **1.0.0**, as required by the packaging tools. GitHub marks this distribution as **v1.0.0-beta.2 prerelease**.
+The plugin binary and package manifests use numeric version **1.0.1**, as required by the packaging tools. GitHub marks this distribution as **v1.0.1-beta.1 prerelease**.
 
 ## Build
 
 Built against [inMusic MPC Plugin Builder SDK](https://github.com/inmusic-software/mpc-plugin-builder-sdk/tree/febd2ca5bd9eb16c4a412837196e145566bc981b). Place the repository under the SDK plugins directory, then use its build tools. ARM distributions were compiled with Clang and Arm GNU 13.3 sysroots, with `compat/glibc-strtoul.cpp` and `-Wl,--wrap=__isoc23_strtoul` to avoid a glibc 2.38 dependency. ARMv7 requires glibc 2.32 and AArch64 requires glibc 2.35.
 
-OpenMPC packaging tools are pinned to commit `7199ebf12722f3828b4a4daac38e2cedf666cd0c`, including current installation and uninstallation scripts with LF line endings.
+OpenMPC packaging tools are pinned to commit `93804291aac2623a62cb2baacf8125c7270fe4e7`, including current installation and uninstallation scripts with LF line endings.
 
 ## License and sources
 
 MIT. Copyright © 2026 Argerax for original code and assets. Reused SDK components retain the inMusic copyright and license notices. See [LICENSE](LICENSE).
 
 [Sennheiser original manual, filter-response curves and circuit schematics](https://rubidium.se/~magnus/synths/companies/sennheiser/).
+
+## Packaging patch 1.0.1
+
+Rebuilt with the current OpenMPC installation templates. The earlier 1.0.0 hardware test now uses the numeric version expected by the catalog. The five-page interface and audio processing are retained. See the manual for the scope of device verification.
