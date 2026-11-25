@@ -314,7 +314,7 @@ private:
     {
         mpc::PluginInfo p;
         p.name = "Argevox Gerät"; p.vendor = "Argerax";
-        p.uniqueId = MPC_FOURCC('A','w','p','t'); p.version = 10000;
+        p.uniqueId = MPC_FOURCC('A','w','p','t'); p.version = 10001;
         p.isInstrument = false; p.numInputs = p.numOutputs = 2; p.tailSamples = 0;
         return p;
     }
