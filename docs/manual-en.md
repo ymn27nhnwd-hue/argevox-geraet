@@ -1,8 +1,14 @@
-# Argevox Gerät — 1.0.0 beta 2
+# Argevox Gerät — 1.0.1 beta 1
 
-Developed by Argerax. Internal plugin version 1.0.0, distributed as beta 2.
+Developed by Argerax. Internal plugin version 1.0.1, distributed as beta 1.
 
 [Español](manual-es.md) · [Deutsch](manual-de.md)
+
+## Packaging patch 1.0.1
+
+The audio processing and parameter layout are retained from 1.0.0 beta 2. This patch refreshes the OpenMPC installer templates and release identifiers. The existing hardware test is keyed as 1.0.0, matching that build's numeric manifest version. Installation of 1.0.1 on hardware still needs confirmation.
+
+The author measured the whole project at approximately 34% CPU with Mini D and Argevox active, versus 20% with Argevox bypassed. The difference is approximately 14 percentage points in that project, not an isolated CPU benchmark of the plugin.
 
 ## Install and start
 
@@ -88,7 +94,7 @@ The stereo adaptation has two inputs and two outputs. It does not expose the ori
 
 Automated checks cover loading, 93-parameter state, six presets, 32–512-sample blocks, finite output, in-place processing, silence, restoration of the 49 published parameters, monitors, multifilter, articulated noise, pause filling and spectral movement under formant shifting. Both ARM packages pass the current OpenMPC catalog validator without warnings.
 
-The author reported successful beta 1 playback on MPC One+ with MPC OS 3.10.1, including chords and dark voices, and highlighted Klar 201. Beta 2 retains those exact DSP binaries. CPU usage and installation through OpenMPC of this new beta remain unmeasured. Hardware feedback is an author's test report, rather than a calibrated comparison with the original instrument.
+The author reported successful beta 1 playback on MPC One+ with MPC OS 3.10.1, including chords and dark voices, and highlighted Klar 201. Beta 2 retains those exact DSP binaries. The project CPU comparison is recorded above. Installation of this packaging patch through OpenMPC remains to be confirmed. Hardware feedback is an author's test report, rather than a calibrated comparison with the original instrument.
 
 ## Sources and license
 

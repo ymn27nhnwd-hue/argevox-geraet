@@ -1,8 +1,14 @@
-# Argevox Gerät — 1.0.0 Beta 2
+# Argevox Gerät — 1.0.1 Beta 1
 
-Entwicklung und Hersteller Argerax. Interne Plugin-Version 1.0.0, veröffentlicht als Beta 2.
+Entwicklung und Hersteller Argerax. Interne Plugin-Version 1.0.1, veröffentlicht als Beta 1.
 
 [English](manual-en.md) · [Español](manual-es.md)
+
+## Paketkorrektur 1.0.1
+
+Audioverarbeitung und Parameteranordnung entsprechen 1.0.0 Beta 2. Diese Korrektur aktualisiert die OpenMPC-Installationsvorlagen und Versionskennungen. Der vorhandene Hardwaretest wird als 1.0.0 erfasst, passend zur numerischen Manifestversion dieses Motors. Die Installation von 1.0.1 auf Hardware muss noch bestätigt werden.
+
+Der Autor meldete für das gesamte Projekt etwa 34% CPU bei aktivem Mini D und Argevox, gegenüber 20% bei umgangenem Argevox. Die Differenz beträgt in diesem Projekt ungefähr 14 Prozentpunkte. Dies ist kein isolierter CPU-Benchmark des Plugins.
 
 ## Installation und erster Start
 
@@ -88,7 +94,7 @@ Die Stereoanpassung besitzt zwei Eingänge und zwei Ausgänge. Sie stellt die CV
 
 Automatische Prüfungen umfassen das Laden, den Zustand aller 93 Parameter, sechs Presets, Blockgrößen von 32 bis 512 Samples, endliche Ausgangswerte, In-place-Verarbeitung, Stille, Wiederherstellung der 49 veröffentlichten Parameter, Abhörfunktionen, Multifilter, artikuliertes Rauschen, Pausenfüllung und spektrale Verschiebungen durch Formanten. Beide ARM-Pakete bestehen den aktuellen OpenMPC-Katalogvalidator ohne Warnungen.
 
-Der Autor meldete erfolgreiche Wiedergabe von Beta 1 auf MPC One+ mit MPC OS 3.10.1, einschließlich Akkorden und dunklen Stimmen, und hob Klar 201 hervor. Beta 2 verwendet genau dieselben DSP-Binärdateien. Die CPU-Auslastung und die Installation dieser neuen Beta über OpenMPC sind noch nicht gemessen beziehungsweise bestätigt. Die Hardwaremeldung ist ein Anwenderbericht des Autors; ein kalibrierter Vergleich mit dem historischen Gerät steht aus.
+Der Autor meldete erfolgreiche Wiedergabe von Beta 1 auf MPC One+ mit MPC OS 3.10.1, einschließlich Akkorden und dunklen Stimmen, und hob Klar 201 hervor. Beta 2 verwendet genau dieselben DSP-Binärdateien. Der CPU-Vergleich des Projekts ist oben dokumentiert. Die Installation dieser Paketkorrektur über OpenMPC muss noch bestätigt werden. Die Hardwaremeldung ist ein Anwenderbericht des Autors; ein kalibrierter Vergleich mit dem historischen Gerät steht aus.
 
 ## Quellen und Lizenz
 

@@ -1,4 +1,4 @@
-# Validación · 1.0.0 beta 2
+# Validación · 1.0.1 beta 1
 
 Compilación nativa Windows, ARMv7 y AArch64. Validación SDK de identidad, ABI, bibliotecas, índices de parámetros, 5 páginas, imágenes y Q-Links sin errores ni advertencias.
 
@@ -19,4 +19,4 @@ Los ensayos usan señales sintéticas. No certifican inteligibilidad de lenguaje
 
 Empaquetado OpenMPC
 
-Herramientas fijadas a 7199ebf12722f3828b4a4daac38e2cedf666cd0c. Se mantienen scripts en LF. Ambos ZIP se validan con catalog_check --catalog --expect-id argevox-geraet --expect-repo ymn27nhnwd-hue/argevox-geraet.
+Herramientas fijadas a 93804291aac2623a62cb2baacf8125c7270fe4e7. Se mantienen scripts en LF. Ambos ZIP se validan con catalog_check --catalog --expect-id argevox-geraet --expect-repo ymn27nhnwd-hue/argevox-geraet.

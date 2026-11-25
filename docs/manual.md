@@ -1,8 +1,14 @@
-# Argevox Gerät — 1.0.0 beta 2
+# Argevox Gerät — 1.0.1 beta 1
 
 [English](manual-en.md) · [Deutsch](manual-de.md)
 
-Fabricante y desarrollo Argerax. Compilación interna 1.0.0, distribución de prueba beta 2.
+Fabricante y desarrollo Argerax. Compilación interna 1.0.1, distribución de prueba beta 1.
+
+## Corrección de empaquetado 1.0.1
+
+El procesamiento de audio y la distribución de parámetros se conservan de 1.0.0 beta 2. Esta revisión actualiza las plantillas del instalador de OpenMPC y los identificadores de versión. La prueba de hardware existente se registra como 1.0.0, que coincide con la versión numérica del manifiesto de ese motor. La instalación de 1.0.1 en hardware sigue pendiente de confirmación.
+
+El autor midió aproximadamente 34% de CPU en el proyecto completo con Mini D y Argevox activos, frente a 20% con Argevox en bypass. La diferencia aproximada es de 14 puntos porcentuales en ese proyecto. No es una medición aislada del consumo del plugin.
 
 ## Instalación y primer arranque
 
@@ -88,7 +94,7 @@ La adaptación estéreo tiene dos entradas y dos salidas. Los conectores CV, las
 
 Los ensayos automáticos verifican carga, estado de 93 parámetros, seis presets, bloques de 32 a 512 muestras, señal finita, procesamiento in-place, silencio, migración de los 49 parámetros publicados, funciones de escucha y multifiltro, ruido articulado, relleno de pausas y movimiento del espectro al desplazar formantes.
 
-El autor confirmó el funcionamiento de beta 1 en MPC One+ con MPC OS 3.10.1, con acordes y voces oscuras, y destacó el preset Klar 201. Beta 2 utiliza los mismos binarios DSP y reorganiza la interfaz. El consumo de CPU y la instalación de esta nueva beta mediante OpenMPC siguen pendientes de medición o confirmación. La prueba del autor no constituye una comparación calibrada con un VSM-201 físico.
+El autor confirmó el funcionamiento de beta 1 en MPC One+ con MPC OS 3.10.1, con acordes y voces oscuras, y destacó el preset Klar 201. Beta 2 utiliza los mismos binarios DSP y reorganiza la interfaz. La comparación de CPU del proyecto está registrada arriba. La instalación de esta corrección mediante OpenMPC sigue pendiente de confirmación. La prueba del autor no constituye una comparación calibrada con un VSM-201 físico.
 
 ## Fuentes
 
