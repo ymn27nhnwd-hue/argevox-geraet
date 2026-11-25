@@ -1,4 +1,4 @@
-# Validación · 1.0.1 beta 1
+# Validación · 1.0.1 estable
 
 Compilación nativa Windows, ARMv7 y AArch64. Validación SDK de identidad, ABI, bibliotecas, índices de parámetros, 5 páginas, imágenes y Q-Links sin errores ni advertencias.
 
@@ -15,7 +15,7 @@ Pruebas DSP dirigidas
 - Frecuencias de muestreo comprobadas 32, 44,1, 48 y 96 kHz.
 - Un estado con los 49 identificadores de 0.2.1 restaura sus parámetros.
 
-Los ensayos usan señales sintéticas. No certifican inteligibilidad de lenguaje real ni equivalencia sonora al VSM-201. El autor aprobó la escucha del motor en MPC One+ y comunicó 34% de CPU para el proyecto completo activo frente a 20% en bypass. Son aproximadamente 14 puntos porcentuales, no un benchmark aislado del plugin. La instalación de la revisión 1.0.1 en hardware sigue pendiente.
+Los ensayos usan señales sintéticas. No certifican inteligibilidad de lenguaje real ni equivalencia sonora al VSM-201. El autor aprobó la escucha del motor en MPC One+ y comunicó 34% de CPU para el proyecto completo activo frente a 20% en bypass. Son aproximadamente 14 puntos porcentuales, no un benchmark aislado del plugin. El autor confirmó la instalación manual de 1.0.1 beta 1 en MPC One+ con OS 3.10.1 el 25 de noviembre de 2026. La estable conserva esos mismos binarios ARM; solo actualiza documentación y el encabezado gráfico. La instalación mediante OpenMPC y el hardware AArch64 siguen sin verificar.
 
 Empaquetado OpenMPC
 

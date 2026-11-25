@@ -1,12 +1,14 @@
-# Argevox Gerät — 1.0.1 beta 1
+# Argevox Gerät — 1.0.1
 
 [English](manual-en.md) · [Deutsch](manual-de.md)
 
-Fabricante y desarrollo Argerax. Compilación interna 1.0.1, distribución de prueba beta 1.
+Fabricante y desarrollo Argerax. Versión estable 1.0.1.
 
+
+Instalación manual: descargá **Argevox-Geraet-1.0.1-mpc.zip**, descomprimilo y copiá la carpeta completa **Argerax - VST - Argevox Gerät** dentro de **VST2 Plugins**. Si descargás un ZIP de OpenMPC por arquitectura, esa carpeta está dentro de **portable**. No ejecutes los archivos `.sh` en Windows ni macOS. La MPC One+ usa **armv7**. La instalación desde OpenMPC y el hardware AArch64 siguen sin verificar para 1.0.1.
 ## Corrección de empaquetado 1.0.1
 
-El procesamiento de audio y la distribución de parámetros se conservan de 1.0.0 beta 2. Esta revisión actualiza las plantillas del instalador de OpenMPC y los identificadores de versión. La prueba de hardware existente se registra como 1.0.0, que coincide con la versión numérica del manifiesto de ese motor. La instalación de 1.0.1 en hardware sigue pendiente de confirmación.
+El procesamiento de audio y la distribución de parámetros se conservan de 1.0.0 beta 2. Esta revisión actualiza las plantillas del instalador de OpenMPC y los identificadores de versión. La prueba de hardware existente se registra como 1.0.0, que coincide con la versión numérica del manifiesto de ese motor. El 25 de noviembre de 2026 el autor confirmó la instalación manual y el funcionamiento de 1.0.1 beta 1 en MPC One+ con MPC OS 3.10.1. La estable conserva los mismos binarios ARM; solo cambia la documentación y el encabezado gráfico.
 
 El autor midió aproximadamente 34% de CPU en el proyecto completo con Mini D y Argevox activos, frente a 20% con Argevox en bypass. La diferencia aproximada es de 14 puntos porcentuales en ese proyecto. No es una medición aislada del consumo del plugin.
 
@@ -14,7 +16,7 @@ El autor midió aproximadamente 34% de CPU en el proyecto completo con Mini D y 
 
 Requiere MPC OS 3.10.1 o posterior y Preferences → Enhancements (Beta) → Enable Enhancements y External Plugin Support activados. Copiá la carpeta `Argerax - VST - Argevox Gerät` del ZIP manual a `VST2 Plugins` en la raíz de tu unidad. Reiniciá la MPC o volvé a explorar los plugins según el flujo del dispositivo.
 
-Esta beta usa la misma identidad de plugin que 0.2.1 y ocupa su lugar. Guardá una copia del instalador 0.2.1 y de los proyectos antes de probarla. Conserva los identificadores y el orden de los primeros 49 parámetros, aunque el motor cambia el sonido. Los parámetros nuevos aparecen al final. Los proyectos antiguos conservan sus ganancias y umbral, que pueden necesitar reajuste para este motor.
+Esta versión usa la misma identidad de plugin que 0.2.1 y ocupa su lugar. Guardá una copia del instalador 0.2.1 y de los proyectos antes de probarla. Conserva los identificadores y el orden de los primeros 49 parámetros, aunque el motor cambia el sonido. Los parámetros nuevos aparecen al final. Los proyectos antiguos conservan sus ganancias y umbral, que pueden necesitar reajuste para este motor.
 
 ## Ruteo
 
@@ -78,7 +80,7 @@ Formanten desplaza la envolvente entre bandas de −12 a +12 semitonos. Dunkelhe
 
 Si Vocoder queda en silencio, comprobá ambos medidores de entrada y el ruteo L/R. Poné Schwelle temporalmente en −80 y seleccioná Extern L para usar Mini D. Si solo escuchás una nota sostenida, confirmá que el micrófono vaya a R y que Pausenmodus esté en Aus. Si la voz suena opaca, empezá con Klar 201, Entzischung 0, Dunkelheit 0 y las bandas en 0 dB. Guardá la configuración que funciona como preset o proyecto de MPC.
 
-## Referencia VSM-201 y alcance de esta beta
+## Referencia VSM-201 y alcance de esta versión
 
 Se implementó una interpretación funcional digital de los bloques del manual, con banco de 20 bandas, envolventes, AGC, excitación tonal/ruido, selección automática, mezcla de voz filtrada, multifiltro, monitores de entrada y relleno global o por pares.
 

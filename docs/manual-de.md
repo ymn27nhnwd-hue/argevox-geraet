@@ -1,12 +1,14 @@
-# Argevox Gerät — 1.0.1 Beta 1
+# Argevox Gerät — 1.0.1
 
-Entwicklung und Hersteller Argerax. Interne Plugin-Version 1.0.1, veröffentlicht als Beta 1.
+Entwicklung und Hersteller Argerax. Stabile Version 1.0.1.
 
 [English](manual-en.md) · [Español](manual-es.md)
 
+
+Manuelle Installation: **Argevox-Geraet-1.0.1-mpc.zip** herunterladen, entpacken und den vollständigen Ordner **Argerax - VST - Argevox Gerät** nach **VST2 Plugins** kopieren. Bei architekturspezifischen OpenMPC-ZIPs liegt dieser Ordner unter **portable**. Die `.sh`-Dateien nicht unter Windows oder macOS ausführen. MPC One+ verwendet **armv7**. Die Installation über OpenMPC und AArch64-Hardware sind für 1.0.1 noch nicht bestätigt.
 ## Paketkorrektur 1.0.1
 
-Audioverarbeitung und Parameteranordnung entsprechen 1.0.0 Beta 2. Diese Korrektur aktualisiert die OpenMPC-Installationsvorlagen und Versionskennungen. Der vorhandene Hardwaretest wird als 1.0.0 erfasst, passend zur numerischen Manifestversion dieses Motors. Die Installation von 1.0.1 auf Hardware muss noch bestätigt werden.
+Audioverarbeitung und Parameteranordnung entsprechen 1.0.0 Beta 2. Diese Korrektur aktualisiert die OpenMPC-Installationsvorlagen und Versionskennungen. Der vorhandene Hardwaretest wird als 1.0.0 erfasst, passend zur numerischen Manifestversion dieses Motors. Am 25.11.2026 bestätigte der Autor die manuelle Installation und Funktion von 1.0.1 Beta 1 auf MPC One+ mit MPC OS 3.10.1. Die stabile Version enthält dieselben ARM-DSP-Binärdateien; nur Dokumentation und grafische Versionsanzeige ändern sich.
 
 Der Autor meldete für das gesamte Projekt etwa 34% CPU bei aktivem Mini D und Argevox, gegenüber 20% bei umgangenem Argevox. Die Differenz beträgt in diesem Projekt ungefähr 14 Prozentpunkte. Dies ist kein isolierter CPU-Benchmark des Plugins.
 
@@ -14,7 +16,7 @@ Der Autor meldete für das gesamte Projekt etwa 34% CPU bei aktivem Mini D und A
 
 Erforderlich sind MPC OS 3.10.1 oder neuer sowie die aktivierten Einstellungen Preferences → Enhancements (Beta) → Enable Enhancements und External Plugin Support. Für die manuelle Installation das entsprechende ZIP entpacken und den Ordner `Argerax - VST - Argevox Gerät` in `VST2 Plugins` im Stammverzeichnis des Laufwerks kopieren. Anschließend die MPC neu starten oder die externen Plugins entsprechend den Möglichkeiten des Geräts neu einlesen. Die architekturspezifischen ZIP-Dateien sind für den OpenMPC Plugin Manager bestimmt.
 
-Diese Beta verwendet dieselbe Plugin-Kennung wie 0.2.1 und ersetzt deren Installation. Das bisherige Installationspaket und eine Kopie der Projekte für Vergleiche aufbewahren. Kennungen und Reihenfolge der ersten 49 Parameter bleiben erhalten. Die neue Klangerzeugung verändert den Klang, daher können ältere Pegel- und Schwelleneinstellungen eine Anpassung benötigen. Beta 2 verwendet dieselben DSP-Binärdateien wie Beta 1 und ordnet die Oberfläche auf fünf Seiten neu.
+Diese Version verwendet dieselbe Plugin-Kennung wie 0.2.1 und ersetzt deren Installation. Das bisherige Installationspaket und eine Kopie der Projekte für Vergleiche aufbewahren. Kennungen und Reihenfolge der ersten 49 Parameter bleiben erhalten. Die neue Klangerzeugung verändert den Klang, daher können ältere Pegel- und Schwelleneinstellungen eine Anpassung benötigen. Beta 2 verwendet dieselben DSP-Binärdateien wie Beta 1 und ordnet die Oberfläche auf fünf Seiten neu.
 
 ## Audio-Routing
 

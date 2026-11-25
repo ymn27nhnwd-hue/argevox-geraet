@@ -1,12 +1,14 @@
-# Argevox Gerät — 1.0.1 beta 1
+# Argevox Gerät — 1.0.1
 
-Developed by Argerax. Internal plugin version 1.0.1, distributed as beta 1.
+Developed by Argerax. Stable release 1.0.1.
 
 [Español](manual-es.md) · [Deutsch](manual-de.md)
 
+
+Manual installation: choose **Argevox-Geraet-1.0.1-mpc.zip**, extract it and copy the complete **Argerax - VST - Argevox Gerät** folder into **VST2 Plugins**. In an architecture-specific OpenMPC ZIP, that folder is inside **portable**. Do not run the `.sh` files on Windows or macOS. MPC One+ uses **armv7**. Installation through OpenMPC and AArch64 hardware remain unverified for 1.0.1.
 ## Packaging patch 1.0.1
 
-The audio processing and parameter layout are retained from 1.0.0 beta 2. This patch refreshes the OpenMPC installer templates and release identifiers. The existing hardware test is keyed as 1.0.0, matching that build's numeric manifest version. Installation of 1.0.1 on hardware still needs confirmation.
+The audio processing and parameter layout are retained from 1.0.0 beta 2. This patch refreshes the OpenMPC installer templates and release identifiers. The existing hardware test is keyed as 1.0.0, matching that build's numeric manifest version. On 2026-11-25 the author confirmed manual installation and successful operation of 1.0.1 beta 1 on MPC One+ with MPC OS 3.10.1. Stable 1.0.1 retains the same ARM DSP binaries; only documentation and the graphic version heading change.
 
 The author measured the whole project at approximately 34% CPU with Mini D and Argevox active, versus 20% with Argevox bypassed. The difference is approximately 14 percentage points in that project, not an isolated CPU benchmark of the plugin.
 
@@ -14,7 +16,7 @@ The author measured the whole project at approximately 34% CPU with Mini D and A
 
 Requires MPC OS 3.10.1 or later. Enable Preferences → Enhancements (Beta) → Enable Enhancements and External Plugin Support. For manual installation, extract the manual ZIP and copy `Argerax - VST - Argevox Gerät` into `VST2 Plugins` at the root of your drive. Restart the MPC or rescan external plugins as supported by your device. The per-architecture ZIPs are intended for OpenMPC Plugin Manager.
 
-This beta uses the same plugin identity as 0.2.1 and replaces its installation. Keep the earlier installer and a copy of your projects for comparison. The first 49 parameter identifiers and their order are preserved. The new engine changes the sound, so old input gains and threshold settings may need adjustment. Beta 2 uses the same DSP binaries as beta 1 and reorganizes its interface into five pages.
+This release uses the same plugin identity as 0.2.1 and replaces its installation. Keep the earlier installer and a copy of your projects for comparison. The first 49 parameter identifiers and their order are preserved. The new engine changes the sound, so old input gains and threshold settings may need adjustment. Beta 2 uses the same DSP binaries as beta 1 and reorganizes its interface into five pages.
 
 ## Audio routing
 
